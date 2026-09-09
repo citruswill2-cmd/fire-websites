@@ -3,62 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What do you want on the site</title>
+  <title>I make websites</title>
   <meta name="theme-color" content="#0C0B0A" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: "#0C0B0A",
-            paper: "#F4F0E8",
-            fire: "#FF4D12",
-            mute: "#8A8378",
-            line: "#2A2724",
-            field: "#161412",
-          },
-        },
-      },
-    };
-  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { background: #0C0B0A; color: #F4F0E8; font: 16px/1.4 system-ui, sans-serif; }
+    main { max-width: 22rem; margin: 0 auto; padding: 2.5rem 1.25rem; }
+    .star { color: #FF4D12; font-size: 1.25rem; }
+    h1 { margin: .75rem 0 .25rem; font-size: 1.6rem; }
+    p { color: #8A8378; margin-bottom: 1.5rem; }
+    label { display: block; margin: 0 0 .9rem; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: #8A8378; }
+    input, textarea, select, button { width: 100%; margin-top: .35rem; padding: .8rem .75rem; border: 1px solid #2A2724; border-radius: 8px; background: #161412; color: #F4F0E8; font: inherit; }
+    textarea { min-height: 5rem; resize: vertical; }
+    button { background: #FF4D12; color: #0C0B0A; font-weight: 600; border: 0; margin-top: .5rem; cursor: pointer; }
+    #done { display: none; }
+    #out { margin-top: 1rem; padding: .75rem; border: 1px solid #2A2724; background: #161412; font: 12px/1.4 ui-monospace, monospace; white-space: pre-wrap; }
+  </style>
 </head>
-<body class="min-h-dvh bg-ink text-paper antialiased">
-  <main class="mx-auto max-w-md px-5 py-10">
-    <p class="text-xl leading-none text-fire">*</p>
-    <p class="mt-2 text-[11px] uppercase tracking-[0.22em] text-mute">Chris — Fire Websites</p>
-    <h1 class="mt-3 text-2xl font-semibold">What do you want on the site</h1>
-    <p class="mt-2 text-sm text-mute">Fill this out. I build it. Don’t write an essay.</p>
-    <form id="f" class="mt-8 space-y-5">
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">Name</span><input required name="name" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">Email</span><input required type="email" name="email" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">What do you sell / do</span><input required name="does" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">What should the site do</span><textarea required name="wants" rows="3" placeholder="Get calls. Sell shit. Show work. Book jobs." class="w-full resize-y rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire"></textarea></label>
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">Site you like (paste a link)</span><input name="like" placeholder="https://" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">How much you wanna spend</span><select name="budget" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire"><option value="">idk</option><option>cheap</option><option>normal</option><option>a lot</option></select></label>
-      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">When you need it</span><input name="when" placeholder="ASAP / next month / whenever" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
-      <button class="w-full rounded-lg bg-fire py-3 text-sm font-medium text-ink">Send</button>
+<body>
+  <main>
+    <div class="star">*</div>
+    <h1>I make websites</h1>
+    <p>Say what you want. I build it.</p>
+    <form id="f">
+      <label>Name <input required name="name" /></label>
+      <label>Email <input required type="email" name="email" /></label>
+      <label>What the site should do <textarea required name="wants" placeholder="Get calls. Sell stuff. Show work."></textarea></label>
+      <label>Money
+        <select name="budget">
+          <option value="idk">idk</option>
+          <option>cheap</option>
+          <option>normal</option>
+          <option>a lot</option>
+        </select>
+      </label>
+      <button>Send</button>
     </form>
-    <section id="done" class="mt-8 hidden">
-      <p class="text-2xl font-semibold">Got it.</p>
-      <p class="mt-2 text-sm text-mute">I’ll look. I’ll hit you if I want the job.</p>
-      <pre id="out" class="mt-4 whitespace-pre-wrap rounded-lg border border-line bg-field p-3 text-xs"></pre>
-      <button id="copy" type="button" class="mt-3 rounded-lg border border-line px-3 py-2 text-sm">Copy</button>
+    <section id="done">
+      <h1>Got it</h1>
+      <p>I’ll hit you if I want the job.</p>
+      <pre id="out"></pre>
     </section>
   </main>
   <script>
-    const YOUR_EMAIL = "citruswill2@gmail.com";
+    const MAIL = "citruswill2@gmail.com";
     const f = document.getElementById("f");
-    f.addEventListener("submit", (e) => {
+    f.onsubmit = (e) => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(f));
-      const text = "NAME: " + d.name + "\nEMAIL: " + d.email + "\nDOES: " + d.does + "\nWANTS: " + d.wants + "\nLIKES: " + (d.like || "none") + "\nMONEY: " + (d.budget || "idk") + "\nWHEN: " + (d.when || "idk");
-      f.classList.add("hidden");
-      document.getElementById("done").classList.remove("hidden");
+      const text = "NAME: " + d.name + "\nEMAIL: " + d.email + "\nWANTS: " + d.wants + "\nMONEY: " + d.budget;
+      f.style.display = "none";
+      document.getElementById("done").style.display = "block";
       document.getElementById("out").textContent = text;
-      location.href = "mailto:" + YOUR_EMAIL + "?subject=" + encodeURIComponent("site brief") + "&body=" + encodeURIComponent(text);
-    });
-    document.getElementById("copy").onclick = () => navigator.clipboard.writeText(document.getElementById("out").textContent);
+      location.href = "mailto:" + MAIL + "?subject=site&body=" + encodeURIComponent(text);
+    };
   </script>
 </body>
 </html>
