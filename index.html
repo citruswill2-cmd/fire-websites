@@ -29,44 +29,16 @@
     <p class="mt-2 text-[11px] uppercase tracking-[0.22em] text-mute">Chris — Fire Websites</p>
     <h1 class="mt-3 text-2xl font-semibold">What do you want on the site</h1>
     <p class="mt-2 text-sm text-mute">Fill this out. I build it. Don’t write an essay.</p>
-
     <form id="f" class="mt-8 space-y-5">
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">Name</span>
-        <input required name="name" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" />
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">Email</span>
-        <input required type="email" name="email" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" />
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">What do you sell / do</span>
-        <input required name="does" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" />
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">What should the site do</span>
-        <textarea required name="wants" rows="3" placeholder="Get calls. Sell shit. Show work. Book jobs." class="w-full resize-y rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire"></textarea>
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">Site you like (paste a link)</span>
-        <input name="like" placeholder="https://" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" />
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">How much you wanna spend</span>
-        <select name="budget" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire">
-          <option value="">idk</option>
-          <option>cheap</option>
-          <option>normal</option>
-          <option>a lot</option>
-        </select>
-      </label>
-      <label class="block">
-        <span class="mb-1 block text-xs uppercase tracking-wider text-mute">When you need it</span>
-        <input name="when" placeholder="ASAP / next month / whenever" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" />
-      </label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">Name</span><input required name="name" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">Email</span><input required type="email" name="email" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">What do you sell / do</span><input required name="does" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">What should the site do</span><textarea required name="wants" rows="3" placeholder="Get calls. Sell shit. Show work. Book jobs." class="w-full resize-y rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire"></textarea></label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">Site you like (paste a link)</span><input name="like" placeholder="https://" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">How much you wanna spend</span><select name="budget" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire"><option value="">idk</option><option>cheap</option><option>normal</option><option>a lot</option></select></label>
+      <label class="block"><span class="mb-1 block text-xs uppercase tracking-wider text-mute">When you need it</span><input name="when" placeholder="ASAP / next month / whenever" class="w-full rounded-lg border border-line bg-field px-3 py-3 text-sm outline-none focus:ring-2 focus:ring-fire" /></label>
       <button class="w-full rounded-lg bg-fire py-3 text-sm font-medium text-ink">Send</button>
     </form>
-
     <section id="done" class="mt-8 hidden">
       <p class="text-2xl font-semibold">Got it.</p>
       <p class="mt-2 text-sm text-mute">I’ll look. I’ll hit you if I want the job.</p>
@@ -74,29 +46,19 @@
       <button id="copy" type="button" class="mt-3 rounded-lg border border-line px-3 py-2 text-sm">Copy</button>
     </section>
   </main>
-
   <script>
-    const YOUR_EMAIL = "you@yourdomain.com";
+    const YOUR_EMAIL = "citruswill2@gmail.com";
     const f = document.getElementById("f");
     f.addEventListener("submit", (e) => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(f));
-      const text =
-        "NAME: " + d.name +
-        "\nEMAIL: " + d.email +
-        "\nDOES: " + d.does +
-        "\nWANTS: " + d.wants +
-        "\nLIKES: " + (d.like || "none") +
-        "\nMONEY: " + (d.budget || "idk") +
-        "\nWHEN: " + (d.when || "idk");
+      const text = "NAME: " + d.name + "\nEMAIL: " + d.email + "\nDOES: " + d.does + "\nWANTS: " + d.wants + "\nLIKES: " + (d.like || "none") + "\nMONEY: " + (d.budget || "idk") + "\nWHEN: " + (d.when || "idk");
       f.classList.add("hidden");
       document.getElementById("done").classList.remove("hidden");
       document.getElementById("out").textContent = text;
       location.href = "mailto:" + YOUR_EMAIL + "?subject=" + encodeURIComponent("site brief") + "&body=" + encodeURIComponent(text);
     });
-    document.getElementById("copy").onclick = () => {
-      navigator.clipboard.writeText(document.getElementById("out").textContent);
-    };
+    document.getElementById("copy").onclick = () => navigator.clipboard.writeText(document.getElementById("out").textContent);
   </script>
 </body>
 </html>
